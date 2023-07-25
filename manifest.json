@@ -1,0 +1,24 @@
+{
+  "name": "Old Twitter",
+  "description": "Long live the bird",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "/assets/twitter.png",
+    "128": "/assets/twitter.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["/assets/twitter.png", "/assets/twitter-favicon.png"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://twitter.com/*"
+      ]
+    }
+  ]
+}
