@@ -38,3 +38,16 @@ waitForElement('[aria-label="Twitter"]').then((elm) => {
   twitterIcon.height = 42;
   container.appendChild(twitterIcon);
 });
+
+// Change website title
+const titleObserver = new MutationObserver((mutationList) => {
+    for (const mutation of mutationList) {
+      if (mutation.addedNodes.forEach(node => {
+        const title = document.querySelector('title');
+        if (node.textContent.endsWith('X')) title.innerText = title.innerText.slice(0, -1) + 'Twitter';
+      }));
+    }
+  }
+);
+
+waitForElement('title').then(title => titleObserver.observe(title, { childList: true, }));
