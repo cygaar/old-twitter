@@ -28,7 +28,7 @@ waitForElement('[aria-label="Loading…"]').then((container) => {
 });
 
 // Set web app icon
-waitForElement('[aria-label="Twitter"]').then((elm) => {
+waitForElement('[aria-label="X"]').then((elm) => {
   const container = elm.children[0];
   container.innerHTML = "";
 
